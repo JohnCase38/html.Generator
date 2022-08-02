@@ -1,6 +1,6 @@
-"# html.Generator"
+# html.Generator
 
-## This is a command line application designed for users to generate a basic html webpage that contains a summary of their work as a software engineer.
+  ## This is a command line application designed for users to generate a basic html webpage that contains a summary of their work as a software engineer.
 
 ## Installation
   Clone the repository from github, and navigate to the desired folder in the command line. Then, run "npm install" to install the required packages for this application.
@@ -12,3 +12,4 @@
     
   ## License
     GNU General Public License v3.0
+    
