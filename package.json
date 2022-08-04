@@ -1,0 +1,23 @@
+{
+  "name": "html.generator",
+  "version": "1.0.0",
+  "description": "Clone the repository from github, and navigate to the desired folder in the command line. Then, run \"npm install\" to install the required packages for this application.\r   Then, run \"node index.js\" to get started.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnCase38/html.Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnCase38/html.Generator/issues"
+  },
+  "homepage": "https://github.com/JohnCase38/html.Generator#readme"
+}
