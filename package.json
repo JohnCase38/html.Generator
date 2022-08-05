@@ -19,5 +19,7 @@
   "bugs": {
     "url": "https://github.com/JohnCase38/html.Generator/issues"
   },
-  "homepage": "https://github.com/JohnCase38/html.Generator#readme"
+  "homepage": "https://github.com/JohnCase38/html.Generator#readme",
+
+  "dependencies": {}
 }
