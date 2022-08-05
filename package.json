@@ -20,6 +20,7 @@
     "url": "https://github.com/JohnCase38/html.Generator/issues"
   },
   "homepage": "https://github.com/JohnCase38/html.Generator#readme",
-
-  "dependencies": {}
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }

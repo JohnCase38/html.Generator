@@ -1,53 +1,62 @@
-const {prompt} = require('inquirer');
+const { prompt } = require('inquirer');
 const fs = require('fs');
+const generateHTML = require('./src/generateHtml')
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
 
-const generateHTML = ({ name, location, github, email }) =>
-    `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css"
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <h1> My name is ${name}</h1>
-        <p> From ${location}</p>
-        <h2> My github: ${github}</h2>
-        <h2> Shoot me an email! ${email}</h2>
-    </div>
-</body>
-</html>`;
+const team = [];
 
-prompt([
-    {
-        type: 'input',
-        name: 'name',
-        message: 'What is your name?',
-    },
-    {
-        type: 'input',
-        name: 'location',
-        message: 'Where are you from?',
-    },
-    {
-        type: 'input',
-        name: 'github',
-        message: 'What is your github?',
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: 'What is your email address?',
-    },
-])
-.then((results) => {
-    console.log(results)
-    const htmlPageContent = generateHTML(results);
+managerQuestion()
 
-    fs.writeFile('index.html', htmlPageContent, (err) =>
+function managerQuestion() {
+    prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?',
+        },
+        {
+            type: 'input',
+            name: 'location',
+            message: 'Where are you from?',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is your github?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address?',
+        },
+    ])
+        .then((results) => {
+            console.log(results)
+
+            menu()
+
+        });
+}
+
+
+function menu() {
+    prompt(
+        {
+            type: 'list',
+            name: 'choice',
+            message: 'what would you like to do?',
+            choices: ['add an Engineer', 'add an Intern', 'Build my Team']
+        }
+    ).then((res) => {
+        console.log(res)
+    })
+}
+
+
+function buildTeam() {
+    fs.writeFileSync('./dist/index.html', generateHTML(team), (err) =>
         err ? console.log(err) : console.log('Successfully generated index.html!')
-        );
-});
+    );
+}
 
