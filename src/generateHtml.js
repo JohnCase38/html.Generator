@@ -1,5 +1,5 @@
 function generateTeam(teamArr){
-
+    console.log ("test", teamArr)
 }
 
 module.exports = (team) =>{
@@ -19,3 +19,4 @@ module.exports = (team) =>{
 </html>`;
 
 }
+

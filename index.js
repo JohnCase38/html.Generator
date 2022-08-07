@@ -35,6 +35,7 @@ function managerQuestion() {
     ])
         .then((results) => {
             console.log(results)
+            team.push(results)
 
             menu()
 
@@ -51,6 +52,16 @@ function menu() {
             choices: ['add an Engineer', 'add an Intern', 'Build my Team']
         }
     ).then((res) => {
+        switch (res.choice) {
+            case 'add an Engineer':
+                addEngineer();
+                break;
+            case 'add an Intern':
+                addIntern();
+                break;
+            case 'Build my Team':
+                buildTeam();    
+        }
         console.log(res)
     })
 }
