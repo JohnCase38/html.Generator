@@ -3,13 +3,15 @@ const fs = require('fs');
 const generateHTML = require('./src/generateHtml')
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
+const inquirer = require('inquirer');
 
 const team = [];
 
 managerQuestion()
 
 function managerQuestion() {
-    prompt([
+    inquirer
+    .prompt([
         {
             type: 'input',
             name: 'name',
@@ -52,6 +54,7 @@ function menu() {
         console.log(res)
     })
 }
+
 
 
 function buildTeam() {
