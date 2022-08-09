@@ -66,10 +66,70 @@ function menu() {
     })
 }
 
+function addEngineer() {
+    inquirer
+    prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is their name?',
+        },
+        {
+            type: 'input',
+            name: 'ID',
+            message: 'What is their employee ID?',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is their github username?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is their email address?',
+        },
+    ])
+        .then((results) => {
+            console.log(results)
+            team.push(results)
+            menu()
+        });
+}
 
+function addIntern() {
+    inquirer
+    prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is their name?',
+        },
+        {
+            type: 'input',
+            name: 'ID',
+            message: 'What is their employee ID?',
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Where do they go to school?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is their email address?',
+        },
+    ])
+        .then((results) => {
+            console.log(results)
+            team.push(results)
+            menu()
+        });
+}
 
 function buildTeam() {
-    fs.writeFileSync('./dist/index.html', generateHTML(team), (err) =>
+    fs.writeFile('./dist/index.html', generateHTML(team), (err) =>
         err ? console.log(err) : console.log('Successfully generated index.html!')
     );
 }

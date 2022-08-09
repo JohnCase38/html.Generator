@@ -1,5 +1,5 @@
 function generateTeam(teamArr){
-    console.log ("test", teamArr)
+    console.log ("Team", teamArr)
 }
 
 module.exports = (team) =>{
